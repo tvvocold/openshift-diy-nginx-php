@@ -27,7 +27,7 @@ function install_nginx() {
         --with-http_realip_module \
         --with-http_gzip_static_module \
         --with-ipv6 \
-        --add-module=/tmp/ngx-fancyindex-master \
+        --add-module=ngx-fancyindex-0.3.5 \
         --prefix=${ROOT_DIR}/nginx
 
     echo "Compiling nginx."
