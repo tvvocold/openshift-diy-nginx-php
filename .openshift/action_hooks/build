@@ -52,14 +52,3 @@ source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_php
 # Check nginx
 check_nginx
 
-# Check PHP
-check_php
-
-# Check pecl extensions
-for ext in "${!PHP_PECL[@]}"; do
-    check_pecl ${ext} ${PHP_PECL["$ext"]} ${PHP_PECL_CONFIGURE["$ext"]};
-done
-
-# Extra
-source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_node
-source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_phalcon
