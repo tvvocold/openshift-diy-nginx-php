@@ -106,8 +106,12 @@ http {
         add_header Strict-Transport-Security max-age=691200;
 
         location / {
-            index  index.html  index.htm  index.php ;
-
+            fancyindex on;
+            fancyindex_localtime off; 
+            fancyindex_exact_size off; 
+            fancyindex_header "/fancyindex/header.html";
+            fancyindex_footer "/fancyindex/footer.html";
+            fancyindex_ignore "fancyindex";
             try_files $uri $uri/ @rewrites;
         }
 
